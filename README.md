@@ -1,7 +1,7 @@
 # AdventOfCode
 
 Advent of Code (AoC) is an annual coding challenge.
-Each day during Advent, a new problem consisting of two parts needs is released.
+Each day during Advent, a new problem consisting of two parts is released.
 This project contains my Python solutions for all the problems I've solved so far.
 
 The solutions prioritize readability.
