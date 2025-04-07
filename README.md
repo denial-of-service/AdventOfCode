@@ -13,7 +13,7 @@ Since puzzle inputs are user-specific, the provided tests will likely fail on yo
 
 ## Instructions
 
-1. Clone the repository.
+1. [Clone the repository](https://github.com/denial-of-service/AdventOfCode/archive/refs/heads/master.zip).
 1. [Log into Advent of Code](https://adventofcode.com/auth/login).
 1. Locate your session cookie:  
    In Firefox, press F12, go to the Storage tab, open the Cookies section,
