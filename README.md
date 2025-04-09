@@ -11,6 +11,10 @@ Advent of Code prohibits sharing puzzle inputs.
 To comply, this project automatically downloads your personal input from the website and caches it to a file.
 Since puzzle inputs are user-specific, the provided tests will likely fail on your machine.
 
+## Prerequisites
+
+- Have [Python 3.13](https://www.python.org/downloads/) or higher installed.
+
 ## Instructions
 
 1. [Clone the repository](https://github.com/denial-of-service/AdventOfCode/archive/refs/heads/master.zip).
