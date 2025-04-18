@@ -14,7 +14,7 @@ def get_new_pos(char: str, pos: (int, int)) -> (int, int):
             return x, y - 1
 
 
-def part1() -> int:
+def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 3)
     santa_pos: (int, int) = (0,0)
     visited_houses: set[(int, int)] = {santa_pos}
@@ -24,7 +24,7 @@ def part1() -> int:
     return len(visited_houses)
 
 
-def part2() -> int:
+def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 3)
     santa_pos: (int, int) = (0,0)
     robot_santa_pos: (int, int) = (0,0)
@@ -40,5 +40,5 @@ def part2() -> int:
 
 
 if __name__ == '__main__':
-    print(part1())
-    print(part2())
+    print(part_1())
+    print(part_2())

@@ -1,7 +1,7 @@
 from src import utils
 
 
-def part1() -> int:
+def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 6)
     field = [[False for _ in range(1000)] for _ in range(1000)]
     for line in puzzle_input.splitlines():
@@ -34,7 +34,7 @@ def part1() -> int:
     return sum(row.count(True) for row in field)
 
 
-def part2() -> int:
+def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 6)
     field = [[0 for _ in range(1000)] for _ in range(1000)]
     for line in puzzle_input.splitlines():
@@ -68,5 +68,5 @@ def part2() -> int:
 
 
 if __name__ == '__main__':
-    print(part1())
-    print(part2())
+    print(part_1())
+    print(part_2())

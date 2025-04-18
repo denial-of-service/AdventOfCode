@@ -1,7 +1,7 @@
 import utils
 
 
-def part1() -> int:
+def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2023, 2)
     cube_limits: dict[str, int] = {'red': 12, 'green': 13, 'blue': 14}
     sum_of_game_ids: int = 0
@@ -26,7 +26,7 @@ def part1() -> int:
     return sum_of_game_ids
 
 
-def part2() -> int:
+def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2023, 2)
     total_power: int = 0
 
@@ -45,5 +45,5 @@ def part2() -> int:
 
 
 if __name__ == '__main__':
-    print(part1())
-    print(part2())
+    print(part_1())
+    print(part_2())

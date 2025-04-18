@@ -27,7 +27,7 @@ def contains_forbidden_strings(s: str) -> bool:
     return False
 
 
-def part1() -> int:
+def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 5)
     nice_strings_count: int = 0
     for line in puzzle_input.splitlines():
@@ -37,4 +37,4 @@ def part1() -> int:
 
 
 if __name__ == '__main__':
-    print(part1())
+    print(part_1())

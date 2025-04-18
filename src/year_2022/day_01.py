@@ -1,7 +1,7 @@
 from src import utils
 
 
-def part1() -> int:
+def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2022, 1)
     max_calories: int = 0
     # Split the list of all calories into a list of calories per elf
@@ -12,7 +12,7 @@ def part1() -> int:
     return max_calories
 
 
-def part2() -> int:
+def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2022, 1)
     calories_per_elf: list[int] = []
     # Split the list of all calories into a list of calories per elf
@@ -25,5 +25,5 @@ def part2() -> int:
 
 
 if __name__ == '__main__':
-    print(part1())
-    print(part2())
+    print(part_1())
+    print(part_2())

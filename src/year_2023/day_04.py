@@ -1,7 +1,7 @@
 from src import utils
 
 
-def part1() -> int:
+def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2023, 4)
     total_points: int = 0
     for line in puzzle_input.splitlines():
@@ -17,4 +17,4 @@ def part1() -> int:
 
 
 if __name__ == '__main__':
-    print(part1())
+    print(part_1())

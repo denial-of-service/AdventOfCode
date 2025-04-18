@@ -1,7 +1,7 @@
 from src import utils
 
 
-def part1() -> int:
+def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 2)
     total_wrapping_paper: int = 0
 
@@ -15,7 +15,7 @@ def part1() -> int:
     return total_wrapping_paper
 
 
-def part2() -> int:
+def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 2)
     total_ribbon_length: int = 0
 
@@ -30,5 +30,5 @@ def part2() -> int:
 
 
 if __name__ == '__main__':
-    print(part1())
-    print(part2())
+    print(part_1())
+    print(part_2())

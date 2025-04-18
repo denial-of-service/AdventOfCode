@@ -29,7 +29,7 @@ def is_safe(levels: list[int]) -> bool:
     return (is_sorted_asc(levels) or is_sorted_desc(levels)) and has_only_safe_level_diffs(levels)
 
 
-def part1() -> int:
+def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2024, 2)
     safe_reports: int = 0
     for report in puzzle_input.splitlines():
@@ -39,7 +39,7 @@ def part1() -> int:
     return safe_reports
 
 
-def part2() -> int:
+def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2024, 2)
     safe_reports: int = 0
     for report in puzzle_input.splitlines():
@@ -55,5 +55,5 @@ def part2() -> int:
 
 
 if __name__ == '__main__':
-    print(part1())
-    print(part2())
+    print(part_1())
+    print(part_2())

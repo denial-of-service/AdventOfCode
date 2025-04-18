@@ -1,7 +1,7 @@
 from src import utils
 
 
-def part1() -> str:
+def part_1() -> str:
     puzzle_input: str = utils.get_puzzle_input(2016, 2)
     keypad: list[list[str]] = [['1', '2', '3'],
                                ['4', '5', '6'],
@@ -24,7 +24,7 @@ def part1() -> str:
     return code
 
 
-def part2() -> str:
+def part_2() -> str:
     puzzle_input: str = utils.get_puzzle_input(2016, 2)
     keypad: list[list[str]] = [[' ', ' ', '1', ' ', ' '],
                                [' ', '2', '3', '4', ' '],
@@ -54,5 +54,5 @@ def part2() -> str:
 
 
 if __name__ == '__main__':
-    print(part1())
-    print(part2())
+    print(part_1())
+    print(part_2())
