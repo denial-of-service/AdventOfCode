@@ -1,7 +1,7 @@
-from src import utils
+import utils
 
 
-def get_new_pos(char: str, pos: (int, int)) -> (int, int):
+def get_new_pos(char: str, pos: tuple[int, int]) -> tuple[int, int]:
     x, y = pos
     match char:
         case '>':
@@ -12,12 +12,13 @@ def get_new_pos(char: str, pos: (int, int)) -> (int, int):
             return x, y + 1
         case 'v':
             return x, y - 1
+    raise Exception()
 
 
 def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 3)
-    santa_pos: (int, int) = (0,0)
-    visited_houses: set[(int, int)] = {santa_pos}
+    santa_pos: (int, int) = (0, 0)
+    visited_houses: set[tuple[int, int]] = {santa_pos}
     for char in puzzle_input:
         santa_pos = get_new_pos(char, santa_pos)
         visited_houses.add(santa_pos)
@@ -26,9 +27,9 @@ def part_1() -> int:
 
 def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2015, 3)
-    santa_pos: (int, int) = (0,0)
-    robot_santa_pos: (int, int) = (0,0)
-    visited_houses: set[(int, int)] = {santa_pos}
+    santa_pos: (int, int) = (0, 0)
+    robot_santa_pos: (int, int) = (0, 0)
+    visited_houses: set[tuple[int, int]] = {santa_pos}
     for i, character in enumerate(puzzle_input):
         if i % 2 == 0:
             santa_pos = get_new_pos(character, santa_pos)

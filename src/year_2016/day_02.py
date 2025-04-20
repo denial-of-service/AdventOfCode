@@ -1,4 +1,4 @@
-from src import utils
+import utils
 
 
 def part_1() -> str:

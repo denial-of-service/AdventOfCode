@@ -1,11 +1,11 @@
 from collections import defaultdict
 
-from src import utils
+import utils
 
 
 def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2024, 4)
-    letters_field: defaultdict[(int, int), str] = defaultdict(str)
+    letters_field: defaultdict[tuple[int, int], str] = defaultdict(str)
     lines: list[str] = puzzle_input.splitlines()
     height: int = len(lines)
     width: int = len(lines[0])
@@ -35,7 +35,7 @@ def part_1() -> int:
 
 def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2024, 4)
-    letters_field: defaultdict[(int, int), str] = defaultdict(str)
+    letters_field: defaultdict[tuple[int, int], str] = defaultdict(str)
     lines: list[str] = puzzle_input.splitlines()
     height: int = len(lines)
     width: int = len(lines[0])

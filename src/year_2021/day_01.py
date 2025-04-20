@@ -1,7 +1,7 @@
 import itertools
 import sys
 
-from src import utils
+import utils
 
 
 def part_1() -> int:

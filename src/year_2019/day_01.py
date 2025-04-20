@@ -1,9 +1,9 @@
-from src import utils
+import utils
 
 
 def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2019, 1)
-    masses: map[int] = map(int, puzzle_input.splitlines())
+    masses: list[int] = list(map(int, puzzle_input.splitlines()))
     total_fuel: int = 0
     for mass in masses:
         total_fuel += mass // 3 - 2
@@ -20,7 +20,7 @@ def calc_fuel_for_module_and_fuel(mass: int) -> int:
 
 def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2019, 1)
-    masses: map[int] = map(int, puzzle_input.splitlines())
+    masses: list[int] = list(map(int, puzzle_input.splitlines()))
     total_fuel: int = 0
     for mass in masses:
         total_fuel += calc_fuel_for_module_and_fuel(mass)

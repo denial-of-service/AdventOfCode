@@ -1,6 +1,6 @@
 import itertools
 
-from src import utils
+import utils
 
 
 def is_sorted_asc(levels: list[int]) -> bool:

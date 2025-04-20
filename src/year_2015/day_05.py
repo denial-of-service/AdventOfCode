@@ -1,4 +1,4 @@
-from src import utils
+import utils
 
 
 def contains_three_vowels(s: str) -> bool:

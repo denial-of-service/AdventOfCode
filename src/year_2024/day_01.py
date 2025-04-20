@@ -1,6 +1,6 @@
 from collections import Counter
 
-from src import utils
+import utils
 
 
 def part_1() -> int:

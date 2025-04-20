@@ -1,4 +1,4 @@
-from src import utils
+import utils
 
 
 def part_1() -> int:
@@ -6,7 +6,7 @@ def part_1() -> int:
     # 0 == North, 1 == East, 2 == South, 3 == West
     direction: int = 0
     # [North, East, South, West]
-    movement: list[(int, int)] = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    movement: list[tuple[int, int]] = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     x: int = 0
     y: int = 0
     instructions: list[str] = puzzle_input.split(', ')
@@ -31,10 +31,10 @@ def part_2() -> int:
     # 0 == North, 1 == East, 2 == South, 3 == West
     direction: int = 0
     # [North, East, South, West]
-    movement: list[(int, int)] = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    movement: list[tuple[int, int]] = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     x: int = 0
     y: int = 0
-    visited_locations: set[(int, int)] = {(x, y)}
+    visited_locations: set[tuple[int, int]] = {(x, y)}
     instructions: list[str] = puzzle_input.split(', ')
     for instruction in instructions:
         turn_direction: str = instruction[0]
