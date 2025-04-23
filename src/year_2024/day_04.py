@@ -9,12 +9,13 @@ def part_1() -> int:
     lines: list[str] = puzzle_input.splitlines()
     height: int = len(lines)
     width: int = len(lines[0])
+
     for y, line in enumerate(lines):
         for x, char in enumerate(line):
             letters_field[(x, y)] = char
 
     # Offsets for checking surrounding cells
-    offsets = ((-1, -2, -3), (0, 0, 0), (1, 2, 3))
+    offsets: list[tuple[int, int, int]] = [(-1, -2, -3), (0, 0, 0), (1, 2, 3)]
     xmas_count: int = 0
 
     # Check each position in the grid
@@ -30,6 +31,7 @@ def part_1() -> int:
                             letters_field[(x + xa, y + ya)] == 'A' and
                             letters_field[(x + xs, y + ys)] == 'S'):
                         xmas_count += 1
+
     return xmas_count
 
 
@@ -39,6 +41,7 @@ def part_2() -> int:
     lines: list[str] = puzzle_input.splitlines()
     height: int = len(lines)
     width: int = len(lines[0])
+
     for y, line in enumerate(lines):
         for x, char in enumerate(line):
             letters_field[(x, y)] = char
@@ -56,6 +59,7 @@ def part_2() -> int:
                     and ((letters_field[(x + 1, y - 1)] == 'M' and letters_field[(x - 1, y + 1)] == 'S')
                          or (letters_field[(x + 1, y - 1)] == 'S' and letters_field[(x - 1, y + 1)] == 'M')):
                 xmas_count += 1
+
     return xmas_count
 
 

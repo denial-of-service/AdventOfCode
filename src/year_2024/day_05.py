@@ -4,6 +4,7 @@ import utils
 def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2024, 5)
     rules_section, update_section = puzzle_input.split('\n\n')
+
     rules: list[tuple[int, int]] = []
     for line in rules_section.splitlines():
         l, r = map(int, line.split('|'))
@@ -20,14 +21,17 @@ def part_1() -> int:
             if l in update_section and r in update_section and update_section.index(l) > update_section.index(r):
                 is_valid = False
                 break
+
         if is_valid:
             sum_middle_numbers += update_section[len(update_section) // 2]
+
     return sum_middle_numbers
 
 
 def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2024, 5)
     rules_section, update_section = puzzle_input.split('\n\n')
+
     rules: list[tuple[int, int]] = []
     for line in rules_section.splitlines():
         l, r = map(int, line.split('|'))
@@ -56,12 +60,14 @@ def part_2() -> int:
                     if l_idx > r_idx:
                         is_valid = False
                         update[l_idx], update[r_idx] = update[r_idx], update[l_idx]
+
             if is_valid:
                 break
 
     sum_middle_numbers: int = 0
     for update in incorrect_updates:
         sum_middle_numbers += update[len(update) // 2]
+
     return sum_middle_numbers
 
 

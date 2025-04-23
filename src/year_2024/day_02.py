@@ -32,25 +32,28 @@ def is_safe(levels: list[int]) -> bool:
 def part_1() -> int:
     puzzle_input: str = utils.get_puzzle_input(2024, 2)
     safe_reports: int = 0
+
     for report in puzzle_input.splitlines():
         levels: list[int] = list(map(int, report.split()))
         if is_safe(levels):
             safe_reports += 1
+
     return safe_reports
 
 
 def part_2() -> int:
     puzzle_input: str = utils.get_puzzle_input(2024, 2)
     safe_reports: int = 0
+
     for report in puzzle_input.splitlines():
         levels: list[int] = list(map(int, report.split()))
         # The report may be safe if one level is removed
         for i, _ in enumerate(levels):
-            missing_one_level: list[int] = levels.copy()
-            del missing_one_level[i]
+            missing_one_level: list[int] = levels[:i] + levels[i + 1:]
             if is_safe(missing_one_level):
                 safe_reports += 1
                 break
+
     return safe_reports
 
 

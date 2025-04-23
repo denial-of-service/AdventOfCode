@@ -25,21 +25,23 @@ def part_1() -> int:
     # Find the starting position of the guard
     pos: Position = Position(-1, -1)
     found_starting_pos: bool = False
+
     for y, row in enumerate(field):
         for x, char in enumerate(row):
             if char == '^':
                 pos = Position(x, y)
                 found_starting_pos = True
                 break
+
         if found_starting_pos:
             break
 
     direction: int = 0  # Up
     # Order of movement deltas when turning right
-    directions = [(0, -1),  # Up
-                  (1, 0),  # Right
-                  (0, 1),  # Down
-                  (-1, 0)]  # Left
+    directions: list[tuple[int, int]] = [(0, -1),  # Up
+                                         (1, 0),  # Right
+                                         (0, 1),  # Down
+                                         (-1, 0)]  # Left
     height: int = len(field)
     width: int = len(field[0])
     visited: set[Position] = set()
@@ -51,14 +53,11 @@ def part_1() -> int:
         dx, dy = directions[direction]
         next_pos: Position = Position(pos.x + dx, pos.y + dy)
 
-        if next_pos.x < 0 or next_pos.x >= width or next_pos.y < 0 or next_pos.y >= height:
-            # next position is out of bounds
+        if next_pos.x < 0 or next_pos.x >= width or next_pos.y < 0 or next_pos.y >= height:  # next position is out of bounds
             on_field = False
-        elif field[next_pos.y][next_pos.x] == '#':
-            # There's an obstacle, turn right
+        elif field[next_pos.y][next_pos.x] == '#':  # There's an obstacle, turn right
             direction = (direction + 1) % len(directions)
-        else:
-            # No obstacle, move forward
+        else:  # No obstacle, move forward
             pos = next_pos
 
     return len(visited)
@@ -85,10 +84,10 @@ def part_2() -> int:
     curr_pos: Position = Position(start_pos.x, start_pos.y)
     direction: int = 0  # Up
     # Order of movement deltas when turning right
-    directions = [(0, -1),  # Up
-                  (1, 0),  # Right
-                  (0, 1),  # Down
-                  (-1, 0)]  # Left
+    directions: list[tuple[int, int]] = [(0, -1),  # Up
+                                         (1, 0),  # Right
+                                         (0, 1),  # Down
+                                         (-1, 0)]  # Left
     height: int = len(field)
     width: int = len(field[0])
     visited: set[Position] = set()
@@ -100,18 +99,15 @@ def part_2() -> int:
         dx, dy = directions[direction]
         next_pos: Position = Position(curr_pos.x + dx, curr_pos.y + dy)
 
-        if next_pos.x < 0 or next_pos.x >= width or next_pos.y < 0 or next_pos.y >= height:
-            # The next position is out of bounds
+        if next_pos.x < 0 or next_pos.x >= width or next_pos.y < 0 or next_pos.y >= height:  # The next position is out of bounds
             on_field = False
-        elif field[next_pos.y][next_pos.x] == '#':
-            # There's an obstacle, turn right
+        elif field[next_pos.y][next_pos.x] == '#':  # There's an obstacle, turn right
             direction = (direction + 1) % len(directions)
-        else:
-            # No obstacle, move forward
+        else:  # No obstacle, move forward
             curr_pos = next_pos
 
-    # Find out which obstruction positions cause the guard to walk in circles
     obstruction_positions: int = 0
+    # Find out which obstruction positions cause the guard to walk in circles
     for obstruction_candidate in visited:
         if field[obstruction_candidate.y][obstruction_candidate.x] != '.':
             continue
@@ -121,6 +117,7 @@ def part_2() -> int:
         visited_turn_positions: set[PositionWithDirection] = set()
         found_cycle: bool = False
         on_field: bool = True
+
         while not found_cycle and on_field:
             dx, dy = directions[pos.direction]
             next_pos: PositionWithDirection = PositionWithDirection(pos.x + dx, pos.y + dy, pos.direction)
@@ -134,6 +131,7 @@ def part_2() -> int:
                     found_cycle = True
                 else:
                     visited_turn_positions.add(pos)
+
                 new_direction: int = (pos.direction + 1) % len(directions)
                 pos = PositionWithDirection(pos.x, pos.y, new_direction)
             else:
@@ -143,6 +141,7 @@ def part_2() -> int:
             obstruction_positions += 1
         # reset field
         field[obstruction_candidate.y][obstruction_candidate.x] = '.'
+
     return obstruction_positions
 
 
